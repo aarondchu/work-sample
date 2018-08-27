@@ -12,119 +12,119 @@ import { RouteComponentProps } from "react-router";
 import * as dragula from 'react-dragula';
 
 interface IFormBuilderPageState {
-    options: ITextValue[],
-    inputTypeOptions: ITextValue[],
-    dataColumnOptions: ITextValue[],
-    addFieldForm: any,
-    formTitle: string,
-    formFields: any[],
-    editingField: IEditingField,
-    currentField: string,
-    scholarshipId: number,
-    formId: number
+	options: ITextValue[],
+	inputTypeOptions: ITextValue[],
+	dataColumnOptions: ITextValue[],
+	addFieldForm: any,
+	formTitle: string,
+	formFields: any[],
+	editingField: IEditingField,
+	currentField: string,
+	scholarshipId: number,
+	formId: number
 
 }
 export interface IEditingField {
-    inEditMode: boolean,
-    editIndex: number,
+	inEditMode: boolean,
+	editIndex: number,
 }
 export interface IField {
-    inputType: string,
-    form: any
+	inputType: string,
+	form: any
 }
 export default class FormBuilderPage extends React.Component<RouteComponentProps<any>, IFormBuilderPageState>{
-    constructor(props) {
-        super(props);
-        this.state = {
-            options: [{
-                value: "input",
-                text: "Input"
-            }, {
-                value: "dropdown",
-                text: "Dropdown"
-            }, {
-                value: "radio",
-                text: "Radio button"
-            }, {
-                value: "checkbox",
-                text: "Checkbox"
-            }],
-            inputTypeOptions: [{
-                value: "text",
-                text: "Text"
-            }, {
-                value: "number",
-                text: "Number"
-            }, {
-                value: "email",
-                text: "Email"
-            }, {
-                value: "date",
-                text: "Date"
-            }],
-            dataColumnOptions: [{
-                value: "",
-                text: "Select a column from database"
-            }, {
-                value: "firstName",
-                text: "First Name"
-            }, {
-                value: "lastName",
-                text: "Last Name"
-            }, {
-                value: "middleName",
-                text: "Middle Name"
-            }, {
-                value: "email",
-                text: "E-Mail"
-            }, {
-                value: "gender",
-                text: "Gender"
-            }],
-            addFieldForm: {},
-            formTitle: "",
-            formFields: [],
-            editingField: {
-                inEditMode: false,
-                editIndex: 0,
-            },
-            currentField: "",
-            formId: 0,
-            scholarshipId: props.match.params.id
-        }
-    }
+	constructor(props) {
+		super(props);
+		this.state = {
+			options: [{
+				value: "input",
+				text: "Input"
+			}, {
+				value: "dropdown",
+				text: "Dropdown"
+			}, {
+				value: "radio",
+				text: "Radio button"
+			}, {
+				value: "checkbox",
+				text: "Checkbox"
+			}],
+			inputTypeOptions: [{
+				value: "text",
+				text: "Text"
+			}, {
+				value: "number",
+				text: "Number"
+			}, {
+				value: "email",
+				text: "Email"
+			}, {
+				value: "date",
+				text: "Date"
+			}],
+			dataColumnOptions: [{
+				value: "",
+				text: "Select a column from database"
+			}, {
+				value: "firstName",
+				text: "First Name"
+			}, {
+				value: "lastName",
+				text: "Last Name"
+			}, {
+				value: "middleName",
+				text: "Middle Name"
+			}, {
+				value: "email",
+				text: "E-Mail"
+			}, {
+				value: "gender",
+				text: "Gender"
+			}],
+			addFieldForm: {},
+			formTitle: "",
+			formFields: [],
+			editingField: {
+				inEditMode: false,
+				editIndex: 0,
+			},
+			currentField: "",
+			formId: 0,
+			scholarshipId: props.match.params.id
+		}
+	}
 
 
 
-    onFieldTypeChange = (field: string, fieldValue: string) => {
-        let form;
-        switch (fieldValue) {
-            case "input":
-                form = { type: "text", name: "", className: "", placeholder: "", value: "", label: this.state.addFieldForm[this.state.currentField].form.label, error: "" };
-                break;
-            case "dropdown":
-                form = { name: "", label: this.state.addFieldForm[this.state.currentField].form.label, selectedValue: "", options: [], error: "" };
-                break;
-            case "radio":
-                form = { label: this.state.addFieldForm[this.state.currentField].form.label, options: [], error: "" };
-                break;
-            case "checkbox":
-                form = { label: this.state.addFieldForm[this.state.currentField].form.label, options: [], error: "" };
-                break;
-            default:
-                break;
-        }
+	onFieldTypeChange = (field: string, fieldValue: string) => {
+		let form;
+		switch (fieldValue) {
+			case "input":
+				form = { type: "text", name: "", className: "", placeholder: "", value: "", label: this.state.addFieldForm[this.state.currentField].form.label, error: "" };
+				break;
+			case "dropdown":
+				form = { name: "", label: this.state.addFieldForm[this.state.currentField].form.label, selectedValue: "", options: [], error: "" };
+				break;
+			case "radio":
+				form = { label: this.state.addFieldForm[this.state.currentField].form.label, options: [], error: "" };
+				break;
+			case "checkbox":
+				form = { label: this.state.addFieldForm[this.state.currentField].form.label, options: [], error: "" };
+				break;
+			default:
+				break;
+		}
 
-        this.setState({ ...this.state, addFieldForm: { ...this.state.addFieldForm, [field]: { ...this.state.addFieldForm[field], inputType: fieldValue, form: form } } });
-    }
+		this.setState({ ...this.state, addFieldForm: { ...this.state.addFieldForm, [field]: { ...this.state.addFieldForm[field], inputType: fieldValue, form: form } } });
+	}
 
-    onColDropDownChange = (field: string, fieldValue: string) => {
-        this.setState({ ...this.state, addFieldForm: { ...this.state.addFieldForm, [field]: { ...this.state.addFieldForm[field], form: { ...this.state.addFieldForm[field].form, dbColumn: fieldValue } } } });
-    }
+	onColDropDownChange = (field: string, fieldValue: string) => {
+		this.setState({ ...this.state, addFieldForm: { ...this.state.addFieldForm, [field]: { ...this.state.addFieldForm[field], form: { ...this.state.addFieldForm[field].form, dbColumn: fieldValue } } } });
+	}
 
-    onInputTypeChange = (field: string, fieldValue: string) => {
-        this.setState({ ...this.state, addFieldForm: { ...this.state.addFieldForm, [field]: { ...this.state.addFieldForm[field], form: { ...this.state.addFieldForm[field].form, type: fieldValue } } } });
-    }
+	onInputTypeChange = (field: string, fieldValue: string) => {
+		this.setState({ ...this.state, addFieldForm: { ...this.state.addFieldForm, [field]: { ...this.state.addFieldForm[field], form: { ...this.state.addFieldForm[field].form, type: fieldValue } } } });
+	}
 
 	onChange = (fieldName: string, fieldValue: string, field: string) => {
 		this.setState({ ...this.state, addFieldForm: { ...this.state.addFieldForm, [field]: { ...this.state.addFieldForm[field], form: { ...this.state.addFieldForm[field].form, [fieldName]: fieldValue } } } });
@@ -349,7 +349,7 @@ export default class FormBuilderPage extends React.Component<RouteComponentProps
 
 
 
-    render() {
+	render() {
 
 		return (
 			<React.Fragment>
@@ -403,34 +403,34 @@ export default class FormBuilderPage extends React.Component<RouteComponentProps
 								disabled={this.state.addFieldForm[this.state.currentField] && this.state.addFieldForm[this.state.currentField].displayForm && this.state.formFields.length > 0}>
 								Publish Form
 					</button>
-                        </form>
-                        {this.state.addFieldForm[this.state.currentField] && this.state.addFieldForm[this.state.currentField].displayForm ?
-                            <FormBuilderForm
-                                options={this.state.options}
-                                onFieldTypeChange={this.onFieldTypeChange}
-                                onEditFieldClick={this.onEditFieldClick}
-                                onSaveFieldClick={this.onSaveFieldClick}
-                                editingField={this.state.editingField}
-                                field={this.state.currentField}
-                                addFieldForm={this.state.addFieldForm}
-                                onChange={this.onChange}
-                                inputTypeOptions={this.state.inputTypeOptions}
-                                dataColumnOptions={this.state.dataColumnOptions}
-                                onColDropDownChange={this.onColDropDownChange}
-                                onAddOptionsClick={this.onAddOptionsClick}
-                                onConditionalQuestionClick={this.onConditionalQuestionClick}
-                                onInputTypeChange={this.onInputTypeChange}
-                                onOptionsChange={this.onOptionsChange}
-                                removeOption={this.removeOption}
-                                onCancel={this.onCancelAddEditClick}
-                                onCancelConditional={this.onCancelConditional}
-                                onSaveConditional={this.onSaveConditional}
-                                onEditConditional={this.onEditConditional}
-                            />
-                            : ""}
-                    </div>
-                </div>
-            </React.Fragment>
-        );
-    }
+						</form>
+						{this.state.addFieldForm[this.state.currentField] && this.state.addFieldForm[this.state.currentField].displayForm ?
+							<FormBuilderForm
+								options={this.state.options}
+								onFieldTypeChange={this.onFieldTypeChange}
+								onEditFieldClick={this.onEditFieldClick}
+								onSaveFieldClick={this.onSaveFieldClick}
+								editingField={this.state.editingField}
+								field={this.state.currentField}
+								addFieldForm={this.state.addFieldForm}
+								onChange={this.onChange}
+								inputTypeOptions={this.state.inputTypeOptions}
+								dataColumnOptions={this.state.dataColumnOptions}
+								onColDropDownChange={this.onColDropDownChange}
+								onAddOptionsClick={this.onAddOptionsClick}
+								onConditionalQuestionClick={this.onConditionalQuestionClick}
+								onInputTypeChange={this.onInputTypeChange}
+								onOptionsChange={this.onOptionsChange}
+								removeOption={this.removeOption}
+								onCancel={this.onCancelAddEditClick}
+								onCancelConditional={this.onCancelConditional}
+								onSaveConditional={this.onSaveConditional}
+								onEditConditional={this.onEditConditional}
+							/>
+							: ""}
+					</div>
+				</div>
+			</React.Fragment>
+		);
+	}
 }
