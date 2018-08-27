@@ -1,4 +1,4 @@
-This is a repository for samples of my code from a previous project
+<h3>This is a repository for samples of my code from a previous project</h3>
 
 In here you will find 2 folders: 
 	-Mobile App contains files from the components I worked on for the mobile app built with React Native and Node.JS
