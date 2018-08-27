@@ -1,10 +1,10 @@
-<h3>This is a repository for samples of my code from a previous project</h3>
+<h2>This is a repository for samples of my code from a previous project</h2>
 
 In here you will find 2 folders: 
 	-Mobile App contains files from the components I worked on for the mobile app built with React Native and Node.JS
 	-Web App contains files from the components I worked on for the web app which was built with Typescript React and ADO.NET.
 
-The Mobile App folder contains one folder for NodeJS and one folder for React Native. 
+<h3>The Mobile App folder contains one folder for NodeJS and one folder for React Native.</h3> 
 
 The NodeJs folder contains the API endpoints for my mobile app built with Node.Js. API endpoint routing was accomplished using Express.JS. 
 
@@ -18,7 +18,7 @@ The NodeJs folder contains the API endpoints for my mobile app built with Node.J
 
 The React Native folder contains the react native components that I worked on in the mobile app
 
-The Web App folder contains one folder for React components, one folder for the ADO.NET MVC Controllers and one folder for MVC Services.
+<h3>The Web App folder contains one folder for React components, one folder for the ADO.NET MVC Controllers and one folder for MVC Services.</h3>
 
 The React folder contains the typescript react components I worked on for the web app.
 		
