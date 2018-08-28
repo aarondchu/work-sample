@@ -1,12 +1,4 @@
-﻿using Eleveight.Models.Domain.Chats;
-using Eleveight.Models.Requests.Chats;
-using Eleveight.Services.Tools;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
-
-namespace Eleveight.Services.Chats
-{
+﻿
     public class ChatMessageService : BaseService, IChatMessageService
     {
         public List<ChatMessage> ReadAll()
@@ -82,4 +74,3 @@ namespace Eleveight.Services.Chats
                 );
         }
     }
-}

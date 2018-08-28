@@ -1,12 +1,4 @@
-﻿using Eleveight.Models.Domain.Chats;
-using Eleveight.Models.Requests.Chats;
-using Eleveight.Services.Tools;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
-
-namespace Eleveight.Services.Chats
-{
+﻿
     public class ChatService : BaseService, IChatService
     {
         private IUserService _userService;
@@ -210,4 +202,3 @@ namespace Eleveight.Services.Chats
         }
 
     }
-}

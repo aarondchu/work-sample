@@ -1,18 +1,4 @@
-﻿using Eleveight.Models.Domain.Utilities;
-using Eleveight.Models.Requests.Utilities;
-using Eleveight.Models.Responses;
-using Eleveight.Services;
-using Eleveight.Services.Utilities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Http;
-using Eleveight.Services.App;
-using System.Web.Script.Serialization;
-
-namespace Eleveight.Web.Controllers.Api.Utilities
-{
+﻿
     [RoutePrefix("api/utilities/userInfo")]
     public class FormUserInfoController : ApiController
     {
@@ -47,4 +33,3 @@ namespace Eleveight.Web.Controllers.Api.Utilities
 
         }
     }
-}

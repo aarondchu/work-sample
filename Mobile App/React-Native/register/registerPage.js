@@ -131,7 +131,7 @@ export default class RegisterPage extends React.Component {
         return (
             <ImageBackground source={require("../../assets/images/bg_screen1.jpg")} style={styles.backgroundImage} >
                 <KeyboardAvoidingView behavior="padding" enabled>
-                    <Image source={require("../../assets/logo/eleveight-header.png")} style={styles.logo} resizeMode="contain" />
+                    <Image source={require("../../assets/logo/header.png")} style={styles.logo} resizeMode="contain" />
                     <View style={styles.form}>
                         {this.state.errorMessage ?
                             <Badge

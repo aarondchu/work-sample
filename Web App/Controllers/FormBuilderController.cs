@@ -1,17 +1,4 @@
-﻿using Eleveight.Models.Domain.Utilities;
-using Eleveight.Models.Requests.Utilities;
-using Eleveight.Models.Responses;
-using Eleveight.Services;
-using Eleveight.Services.Utilities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Http;
-using System.Web.Script.Serialization;
-
-namespace Eleveight.Web.Controllers.Api.Utilities
-{
+﻿
 
     [AllowAnonymous]
     [RoutePrefix("api/utilities/formbuilder")]
@@ -129,4 +116,4 @@ namespace Eleveight.Web.Controllers.Api.Utilities
             }
         }
     }
-}
+

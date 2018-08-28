@@ -112,7 +112,7 @@ class LoginPage extends React.Component {
 			<React.Fragment>
 				<ImageBackground source={require("../../assets/images/bg_screen1.jpg")} style={styles.backgroundImage} >
 					<KeyboardAvoidingView behavior="padding" enabled>
-						<Image source={require("../../assets/logo/eleveight-header.png")} style={styles.logo} resizeMode="contain" />
+						<Image source={require("../../assets/logo/header.png")} style={styles.logo} resizeMode="contain" />
 						<Animated.View style={{
 							marginTop: this.state.paddingInput,
 							height: "100%",

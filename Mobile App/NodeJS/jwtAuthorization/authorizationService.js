@@ -8,8 +8,8 @@ const encodeData = (data) => {
 
 const verifyToken = (req, res, next) => {
     try {
-        if (req.headers.eleveighttoken) {
-            const data = jwt.verify(req.headers.eleveighttoken, process.env.JWT_SECRET);
+        if (req.headers.ttoken) {
+            const data = jwt.verify(req.headers.token, process.env.JWT_SECRET);
             req.userId = data.Id;
             req.userEmail = data.Email;
             next();

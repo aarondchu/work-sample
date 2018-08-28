@@ -1,15 +1,4 @@
-﻿using Eleveight.Models.Domain.Chats;
-using Eleveight.Models.Requests.App;
-using Eleveight.Models.Requests.Chats;
-using Eleveight.Models.Responses;
-using Eleveight.Services;
-using Eleveight.Services.App;
-using Eleveight.Services.Chats;
-using System;
-using System.Web.Http;
-
-namespace Eleveight.Web.Controllers.Api.Chats
-{
+﻿
     [RoutePrefix("api/chats/messages")]
     public class ChatMessageController : ApiController
     {
@@ -154,4 +143,3 @@ namespace Eleveight.Web.Controllers.Api.Chats
         }
 
     }
-}

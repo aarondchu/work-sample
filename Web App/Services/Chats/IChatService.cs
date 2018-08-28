@@ -1,9 +1,4 @@
-﻿using Eleveight.Models.Domain.Chats;
-using Eleveight.Models.Requests.Chats;
-using System.Collections.Generic;
-
-namespace Eleveight.Services.Chats
-{
+﻿
     public interface IChatService
     {
         void Delete(int id);
@@ -26,4 +21,3 @@ namespace Eleveight.Services.Chats
         void UpdateMessagesRead(int chatId);
 
     }
-}
