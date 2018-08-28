@@ -1,8 +1,9 @@
 <h2>This is a repository for samples of my code from a previous project</h2>
 
-In here you will find 2 folders: 
+In here you will find 3 folders: 
 	-Mobile App contains files from the components I worked on for the mobile app built with React Native and Node.JS
 	-Web App contains files from the components I worked on for the web app which was built with Typescript React and ADO.NET.
+	-SQL Queries contains queries pulled from stored procedures that I used to fetch data from the database.
 
 <h3>The Mobile App folder contains one folder for NodeJS and one folder for React Native.</h3> 
 
